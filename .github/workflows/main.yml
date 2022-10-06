@@ -36,6 +36,9 @@ jobs:
     - name: Check for dockerenv file
       run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
       
+    - name: Check Base Image
+      run: cat /etc/*release
+      
     - run: npm ci
     - run: npm run lint
     - run: npm run build --if-present
