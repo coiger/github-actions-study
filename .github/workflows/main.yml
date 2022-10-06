@@ -17,6 +17,9 @@ jobs:
       image: 'centos:centos7.9.2009'
       volumes:
         - ./client
+    defaults:
+      run:
+        working-directory: './client/'
     strategy:
       matrix:
         node-version: [16.17.1]
