@@ -29,9 +29,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './client/package-lock.json'
-    - run: node --version
-    - run: npm --version
-    - run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+    - run: ls
     - run: npm ci
     - run: npm run lint
     - run: npm run build --if-present
